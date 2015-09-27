@@ -9,6 +9,8 @@ var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 var notify = require("gulp-notify");
 var debug = require("gulp-debug");
+var sass = require("gulp-sass");
+
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -33,8 +35,17 @@ gulp.task('build-html', function () {
 
 // copies changed css files to the output directory
 gulp.task('build-css', function () {
-	return gulp.src(paths.css)
+	return gulp.src(paths.scss, { base: "src" })
+		.pipe(plumber())
 		.pipe(changed(paths.output, {extension: '.css'}))
+		.pipe(sourcemaps.init( ))
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'expanded'
+			})
+		)
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(paths.output));
 });
 
