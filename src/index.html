@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Aurelia</title>
-    <link rel="stylesheet" href="jspm_packages/npm/font-awesome@4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+<html lang="en">
+<head>
 
-  <body aurelia-app="main">
-    <div class="splash">
-      <div class="message">Aurelia Navigation Skeleton</div>
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
+	<meta http-equiv="Content-Security-Policy" content="
+		script-src 'self' http://0.0.0.0:35729 'unsafe-inline' 'unsafe-eval';
+		default-src 'self' ws://0.0.0.0:35729 data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval';
+		style-src 'self' 'unsafe-inline';
+		media-src *">
 
-    <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
-    <script>
-      System.import('aurelia-bootstrapper');
-    </script>
-  </body>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+	<title>Hello World</title>
+
+</head>
+<body aurelia-app="main">
+
+	<script src="cordova.js"></script>
+	<script src="external/system.js"></script>
+	<script src="config.js"></script>
+	<script src="index.js"></script>
+</body>
 </html>
